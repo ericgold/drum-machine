@@ -3,17 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Drum Machine Variation</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<div class="keys">
-		<div class="key">
+		<div data-key="65" class="key">
 			<kbd>A</kbd>
-			<span class="sound"></span>
+			<span class="sound">clap</span>
 		</div>
 	</div>
 
 	<audio data-key="65" src="sounds/clap.wav"></audio>
-	
+	<script src="app.js"></script>
 </body>
 </html>
