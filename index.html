@@ -6,23 +6,28 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<main>
+		<section class="drums">
+			<div class="keys">
+				<div data-key="65" class="key">
+					<kbd>A</kbd>
+					<span class="sound">clap</span>
+				</div>
+			</div>
 
-	<div class="keys">
-		<div data-key="65" class="key">
-			<kbd>A</kbd>
-			<span class="sound">clap</span>
-		</div>
-	</div>
-
-	<div class="keys">
-		<div data-key="83" class="key">
-			<kbd>S</kbd>
-			<span class="sound">kick</span>
-		</div>
-	</div>
-
-	<button class="start-oscillator">Start</button>
-	<button class="stop-oscillator">Stop</button>
+			<div class="keys">
+				<div data-key="83" class="key">
+					<kbd>S</kbd>
+					<span class="sound">kick</span>
+				</div>
+			</div>
+		</section>
+		<section class="oscillator">
+			<button class="start-oscillator">Start</button>
+			<button class="stop-oscillator">Stop</button>
+		</section>
+	</main>
 
 	<audio data-key="65" src="sounds/clap.wav"></audio>
 	<audio data-key="83" src="sounds/kick.wav"></audio>
