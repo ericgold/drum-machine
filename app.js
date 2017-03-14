@@ -25,10 +25,22 @@ window.addEventListener('keydown', playSound);
 // see https://css-tricks.com/introduction-web-audio-api/
 
 var context = new (window.AudioContext || window.webkitAudioContext)();
-
 var oscillator = context.createOscillator();
+var startButton = document.querySelector('.start-oscillator');
+var stopButton = document.querySelector('.stop-oscillator');
 
 oscillator.type == 'sine';
 oscillator.frequency.value = 140;
 oscillator.connect(context.destination);
-oscillator.start();
+
+function startOscillator() {
+	oscillator.start();
+}
+
+function stopOscillator() {
+	oscillator.stop();
+}
+
+startButton.addEventListener('click', startOscillator);
+stopButton.addEventListener('click', stopOscillator);
+
