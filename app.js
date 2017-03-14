@@ -1,3 +1,6 @@
+// drum machine keys
+// see Wes Bos: JavaScript30 project 1
+
 const keys = document.querySelectorAll('.key');
 
 function playSound(e) {
@@ -17,3 +20,15 @@ function removeTransition(e) {
 keys.forEach(key => key.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', playSound);
+
+// web audio API
+// see https://css-tricks.com/introduction-web-audio-api/
+
+var context = new (window.AudioContext || window.webkitAudioContext)();
+
+var oscillator = context.createOscillator();
+
+oscillator.type == 'sine';
+oscillator.frequency.value = 140;
+oscillator.connect(context.destination);
+oscillator.start();
