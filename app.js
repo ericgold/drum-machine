@@ -29,7 +29,17 @@ var oscillator = context.createOscillator();
 var startButton = document.querySelector('.start-oscillator');
 var stopButton = document.querySelector('.stop-oscillator');
 
-oscillator.type == 'sine';
+
+var waveformButtons = document.querySelectorAll('.waveforms input');
+
+/*
+var sineButton = document.querySelector('#sine');
+var squareButton = document.querySelector('#square');
+var triangleButton = document.querySelector('#triangle');
+var sawtoothButton = document.querySelector('#sawtooth');
+*/
+
+oscillator.type == sine;
 oscillator.frequency.value = 140;
 oscillator.connect(context.destination);
 
@@ -40,6 +50,14 @@ function startOscillator() {
 function stopOscillator() {
 	oscillator.stop();
 }
+
+function changeWaveform() {
+	oscillator.type = this.value;
+}
+
+waveformButtons.forEach(function(target) {
+	target.addEventListener('click', changeWaveform);
+}); 
 
 startButton.addEventListener('click', startOscillator);
 stopButton.addEventListener('click', stopOscillator);
