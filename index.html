@@ -30,7 +30,8 @@
 						name="waveform" 
 						type="radio" 
 						id="sine" 
-						value="sine">
+						value="sine"
+						checked>
 				</label>
 				<label for="square">Square
 					<input 
@@ -63,7 +64,7 @@
 
 		<section class="volume">
 			<label for="volume">Volume</label>
-			<input type="range" name="volume">
+			<input type="range" name="volume" min=0 max=1 step=0.1>
 		</section>
 
 	</main>
