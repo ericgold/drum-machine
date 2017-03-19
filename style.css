@@ -10,7 +10,7 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	background-image: radial-gradient(ellipse farthest-corner at 45px 45px , mistyrose 10%, indianred 90%);
+	background-image: radial-gradient(ellipse farthest-corner , mistyrose 10%, indianred 90%);
 
 }
 
