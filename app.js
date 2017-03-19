@@ -28,16 +28,7 @@ var context = new (window.AudioContext || window.webkitAudioContext)();
 var oscillator = context.createOscillator();
 var startButton = document.querySelector('.start-oscillator');
 var stopButton = document.querySelector('.stop-oscillator');
-
-
 var waveformButtons = document.querySelectorAll('.waveforms input');
-
-/*
-var sineButton = document.querySelector('#sine');
-var squareButton = document.querySelector('#square');
-var triangleButton = document.querySelector('#triangle');
-var sawtoothButton = document.querySelector('#sawtooth');
-*/
 
 oscillator.type == sine;
 oscillator.frequency.value = 140;

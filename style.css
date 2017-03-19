@@ -29,14 +29,16 @@ section {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem;
+	padding: 1rem;
 	border: 5px solid indianred;
+	border-radius: 10px;
 }
 
 .keys {
-	margin: 0 1rem;
 	padding: 1rem;
+	margin: 0 1rem;
 	border: 5px solid indianred;
+	border-radius: 10px;
 	background-color: white;
 }
 
@@ -46,10 +48,13 @@ section {
 }
 
 .oscillator button {
+	padding: 1rem;
 	margin: 0 1rem;
 	padding: 0.5rem 1rem;
 	border: 5px solid indianred;
-	border-radius: 25%;
+	border-radius: 10px;
 	background-color: white;
 }
+
+
 
