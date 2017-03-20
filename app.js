@@ -89,7 +89,7 @@ function startOscillator() {
 	note.play(261.63, now);
 }
 
-function playNote(e) {
+function playNote() {
 	let now = context.currentTime;
 	let note = new Sound(context);
 	let hz = this.getAttribute('data-note');
