@@ -25,24 +25,12 @@ window.addEventListener('keydown', playSound);
 // see https://css-tricks.com/introduction-web-audio-api/
 
 // web audio API oscillator
-var context = new (window.AudioContext || window.webkitAudioContext)();
+let context = new (window.AudioContext || window.webkitAudioContext)();
+
+
+
 var oscillator = context.createOscillator();
 
-// DOM elements
-var startButton = document.querySelector('.start-oscillator');
-var stopButton = document.querySelector('.stop-oscillator');
-var waveformButtons = document.querySelectorAll('.waveforms input');
-var volume = document.querySelector('.volume input');
-
-// gain
-var gain = context.createGain();
-oscillator.connect(gain);
-gain.connect(context.destination);
-gain.gain.value = 0.5;
-
-oscillator.type == sine;
-oscillator.frequency.value = 140;
-oscillator.connect(context.destination);
 
 // create Sound class to enable multiple oscillator stops and starts
 
@@ -75,11 +63,34 @@ class Sound {
 		this.gainNode.gain.exponentialRampToValueAtTime(0.001, time + 1);
 		this.oscillator.stop(time + 1);
 	}
-	
+
 }
 
+
+
+// DOM elements
+var startButton = document.querySelector('.start-oscillator');
+var stopButton = document.querySelector('.stop-oscillator');
+var waveformButtons = document.querySelectorAll('.waveforms input');
+var volume = document.querySelector('.volume input');
+
+// gain
+var gain = context.createGain();
+oscillator.connect(gain);
+gain.connect(context.destination);
+gain.gain.value = 0.5;
+
+oscillator.type == sine;
+oscillator.frequency.value = 140;
+oscillator.connect(context.destination);
+
+
 function startOscillator() {
-	oscillator.start();
+	//oscillator.start();
+	let now = context.currentTime;
+	let note = new Sound(context);
+	console.log(note);
+	note.play(261.63, now);
 }
 
 function stopOscillator() {
