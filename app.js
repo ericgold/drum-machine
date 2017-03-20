@@ -40,14 +40,6 @@ oscillator.connect(gain);
 gain.connect(context.destination);
 gain.gain.value = 0.5;
 
-/* code from article
-var now = context.currentTime;
-gain.gain.setValueAtTime(1, now);
-gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
-oscillator.start(now);
-oscillator.stop(now + 0.5);
-*/
-
 oscillator.type == sine;
 oscillator.frequency.value = 140;
 oscillator.connect(context.destination);
