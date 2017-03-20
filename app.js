@@ -9,7 +9,7 @@ function playSound(e) {
 	if(!audio) return; // stop the function from running altogether
 	audio.currentTime = 0;
 	audio.play();
-	key.classList.add('playing');
+	key.parentNode.classList.add('playing');
 }
 
 function removeTransition(e) {
@@ -17,7 +17,7 @@ function removeTransition(e) {
 	this.classList.remove('playing');
 }
 
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => key.parentNode.addEventListener('transitionend', removeTransition));
 
 window.addEventListener('keydown', playSound);
 

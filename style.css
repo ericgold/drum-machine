@@ -46,6 +46,7 @@ section {
 	border: 5px solid indianred;
 	border-radius: 10px;
 	background-color: white;
+	transition: all .1s;
 }
 
 .key {
@@ -53,6 +54,14 @@ section {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+}
+
+.playing {
+	transform: scale(1.1);
+	background-color: indianred;
+	color: mistyrose;
+	border: 5px solid mistyrose;
+	box-shadow: 0 0 10px indianred;
 }
 
 .key kbd {
