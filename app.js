@@ -26,11 +26,7 @@ window.addEventListener('keydown', playSound);
 
 // web audio API oscillator
 let context = new (window.AudioContext || window.webkitAudioContext)();
-
-
-
 var oscillator = context.createOscillator();
-
 
 // create Sound class to enable multiple oscillator stops and starts
 
@@ -73,6 +69,7 @@ var startButton = document.querySelector('.start-oscillator');
 var stopButton = document.querySelector('.stop-oscillator');
 var waveformButtons = document.querySelectorAll('.waveforms input');
 var volume = document.querySelector('.volume input');
+var notes = document.querySelectorAll('.notes button');
 
 // gain
 var gain = context.createGain();
@@ -89,12 +86,19 @@ function startOscillator() {
 	//oscillator.start();
 	let now = context.currentTime;
 	let note = new Sound(context);
-	console.log(note);
 	note.play(261.63, now);
+}
+
+function playNote(e) {
+	let now = context.currentTime;
+	let note = new Sound(context);
+	let hz = this.getAttribute('data-note');
+	note.play(hz, now)
 }
 
 function stopOscillator() {
 	oscillator.stop();
+
 }
 
 function changeWaveform() {
@@ -109,7 +113,10 @@ waveformButtons.forEach(function(target) {
 	target.addEventListener('click', changeWaveform);
 }); 
 
+notes.forEach(note => note.addEventListener('click', playNote));
+
 startButton.addEventListener('click', startOscillator);
 stopButton.addEventListener('click', stopOscillator);
 volume.addEventListener('change', changeVolume);
+
 

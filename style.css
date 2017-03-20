@@ -97,3 +97,14 @@ section {
 	font-size: 1.5rem;
 	font-weight: bold;
 }
+
+.notes button {
+	padding: 1rem;
+	margin: 0 0.5rem;
+	border: 5px solid indianred;
+	border-radius: 10px;
+	background-color: white;
+	color: indianred;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
