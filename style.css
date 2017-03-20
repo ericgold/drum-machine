@@ -21,7 +21,7 @@ main {
 	grid-row-gap: 1rem;
 	margin: auto;
 	padding: 2rem;
-	max-width: 600px;
+	/*max-width: 600px;*/
 	background-color: mistyrose;
 	border: 20px solid indianred;
 	border-radius: 40px;
