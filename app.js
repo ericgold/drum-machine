@@ -42,12 +42,13 @@ class Sound {
 
 		this.oscillator.connect(this.gainNode);
 		this.gainNode.connect(this.context.destination);
-		this.oscillator.type = 'sine';
+		//this.oscillator.type = 'sine';
 	}
 
-	play(value, time) {
+	play(value, time, wave) {
 		this.init();
 
+		this.oscillator.type = wave;
 		this.oscillator.frequency.value = value;
 		this.gainNode.gain.setValueAtTime(1, this.context.currentTime);
 
@@ -93,12 +94,22 @@ function playNote() {
 	let now = context.currentTime;
 	let note = new Sound(context);
 	let hz = this.getAttribute('data-note');
-	note.play(hz, now)
+	let wave = getWaveform();
+	note.play(hz, now, wave);
 }
 
 function stopOscillator() {
 	oscillator.stop();
+}
 
+function getWaveform() {
+	let wave;
+	waveformButtons.forEach(function(btn){
+		if (btn.checked) {
+			wave = btn.value;
+		}
+	});
+	return wave;
 }
 
 function changeWaveform() {
