@@ -93,7 +93,8 @@ section {
 }
 
 .volume,
-.duration {
+.duration,
+.frequency {
 	justify-content: space-between;
 }
 
@@ -102,8 +103,8 @@ section input[type="range"] {
 }
 
 .volume label,
-.duration label {
-	
+.duration label,
+.frequency label {
 	font-size: 1.5rem;
 	font-weight: bold;
 }

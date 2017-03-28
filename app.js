@@ -71,6 +71,7 @@ var stopButton = document.querySelector('.stop-oscillator');
 var waveformButtons = document.querySelectorAll('.waveforms input');
 var volume = document.querySelector('.volume input');
 var duration = document.querySelector('.duration input');
+var frequency = document.querySelector('.frequency input');
 var notes = document.querySelectorAll('.notes button');
 
 // gain
@@ -87,8 +88,11 @@ oscillator.connect(context.destination);
 function startOscillator() {
 	//oscillator.start();
 	let now = context.currentTime;
+	let noteDuration = duration.value;
+	let hz = frequency.value;
 	let note = new Sound(context);
-	note.play(261.63, now);
+	let wave = getWaveform();
+	note.play(hz, now, noteDuration, wave);
 }
 
 function playNote() {
