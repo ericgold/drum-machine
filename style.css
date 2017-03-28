@@ -92,8 +92,18 @@ section {
 	font-weight: bold;
 }
 
-.volume label {
-	margin-right: 0.5rem;
+.volume,
+.duration {
+	justify-content: space-between;
+}
+
+section input[type="range"] {
+	width: 60%;
+}
+
+.volume label,
+.duration label {
+	
 	font-size: 1.5rem;
 	font-weight: bold;
 }

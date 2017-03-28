@@ -45,15 +45,15 @@ class Sound {
 		//this.oscillator.type = 'sine';
 	}
 
-	play(value, time, wave) {
+	play(value, startTime, endTime, wave) {
 		this.init();
 
 		this.oscillator.type = wave;
 		this.oscillator.frequency.value = value;
 		this.gainNode.gain.setValueAtTime(1, this.context.currentTime);
 
-		this.oscillator.start(time);
-		this.stop(time);
+		this.oscillator.start(startTime);
+		this.stop(endTime);
 	}
 
 	stop(time) {
@@ -70,6 +70,7 @@ var startButton = document.querySelector('.start-oscillator');
 var stopButton = document.querySelector('.stop-oscillator');
 var waveformButtons = document.querySelectorAll('.waveforms input');
 var volume = document.querySelector('.volume input');
+var duration = document.querySelector('.duration input');
 var notes = document.querySelectorAll('.notes button');
 
 // gain
@@ -92,10 +93,11 @@ function startOscillator() {
 
 function playNote() {
 	let now = context.currentTime;
+	let noteDuration = duration.value;
 	let note = new Sound(context);
 	let hz = this.getAttribute('data-note');
 	let wave = getWaveform();
-	note.play(hz, now, wave);
+	note.play(hz, now, noteDuration, wave);
 }
 
 function stopOscillator() {
