@@ -39,10 +39,8 @@ class Sound {
 	init() {
 		this.oscillator = this.context.createOscillator();
 		this.gainNode = this.context.createGain();
-
 		this.oscillator.connect(this.gainNode);
 		this.gainNode.connect(this.context.destination);
-		//this.oscillator.type = 'sine';
 	}
 
 	play(value, startTime, endTime, wave) {
@@ -53,7 +51,7 @@ class Sound {
 		this.gainNode.gain.setValueAtTime(1, this.context.currentTime);
 
 		this.oscillator.start(startTime);
-		//this.stop(endTime);
+		this.oscillator.stop(endTime);
 	}
 
 	stop(time) {
@@ -87,7 +85,6 @@ oscillator.connect(context.destination);
 */
 
 function startOscillator() {
-	//oscillator.start();
 	let now = context.currentTime;
 	let noteDuration = duration.value;
 	let hz = frequency.value;
@@ -126,6 +123,8 @@ function changeWaveform() {
 function changeVolume() {
 	gain.gain.value = volume.value;
 }
+
+// Event Listeners
 
 waveformButtons.forEach(function(target) {
 	target.addEventListener('click', changeWaveform);
