@@ -53,7 +53,7 @@ class Sound {
 		this.gainNode.gain.setValueAtTime(1, this.context.currentTime);
 
 		this.oscillator.start(startTime);
-		this.stop(endTime);
+		//this.stop(endTime);
 	}
 
 	stop(time) {
@@ -75,15 +75,16 @@ var frequency = document.querySelector('.frequency input');
 var notes = document.querySelectorAll('.notes button');
 
 // gain
+/*
 var gain = context.createGain();
 oscillator.connect(gain);
 gain.connect(context.destination);
-gain.gain.value = 0.5;
+gain.gain.value = 1;
 
 oscillator.type == sine;
 oscillator.frequency.value = 140;
 oscillator.connect(context.destination);
-
+*/
 
 function startOscillator() {
 	//oscillator.start();
