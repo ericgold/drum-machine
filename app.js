@@ -26,7 +26,8 @@ window.addEventListener('keydown', playSound);
 
 // web audio API oscillator
 let context = new (window.AudioContext || window.webkitAudioContext)();
-var oscillator = context.createOscillator();
+let oscillator = context.createOscillator();
+
 
 // create Sound class to enable multiple oscillator stops and starts
 
